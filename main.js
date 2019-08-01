@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var count = 0;
-    var done = Array();
+    /* var done = Array(); */
     $.ajax({
         type:"GET",
         url:"https://jsonplaceholder.typicode.com/todos",
@@ -11,8 +11,11 @@ $(document).ready(function(){
              
                  output+="<tr><td>"+data[i].id+"</td>"
                  output+="<td>"+data[i].title+"</td>";
-                 output+="<td><input type='checkbox' class='chk' id='c"+ i +"'></td></tr>";   
-                 done[i] = data[i].completed;    
+                 if(data[i].completed)
+                 output+="<td><input type='checkbox' class='chk' id='c"+ i +"'></td></tr>";  
+                 else
+                 output+="<td><input type='checkbox' class='chk' id='c"+i+"' checked disabled></td></tr>";                  
+                    
                         
            }
            output+= "</table>";
