@@ -33,7 +33,7 @@ $(document).ready(function(){
 
             
             var mypromise = new Promise((resolve , reject)=>{
-                if(count >= 5)
+                if(count == 5)
                 {
                     resolve();
                 }
